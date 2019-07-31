@@ -4,7 +4,7 @@ from sys import argv
 import time
 
 
-username = argv[1]
+username = input("Please enter your Kitsu username : ")
 
 mediaDictionary = loadingInfos.getStarted(username)
 
@@ -18,4 +18,5 @@ while(True):
                 continue
             if mediaDictionary[x] < newMediaDict[x]:
                 emailSender.send_email(x,animeURL + x)
+                mediaDictionary[x] = newMediaDict[x]
     time.sleep(60 * 10)
